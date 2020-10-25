@@ -1,0 +1,394 @@
+<header class="header">
+  <div class="languages-options">
+    <a href="#" class="language-link">
+      <img src="../../../../assets/images/icon-vn.png" alt="" />
+    </a>
+    <a href="#" class="language-link">
+      <img
+        class="deactive"
+        src="../../../../assets/images/icon-en.png"
+        alt=""
+      />
+    </a>
+  </div>
+  <div class="banner">
+    <img src="../../../../assets/images/banner.png" alt="" />
+  </div>
+
+  <!--status connect-->
+  <div id="status_connect" class="row status-connect">
+    <div class="col-sm-1" id="toggleSidebar"></div>
+    <div class="col-sm-4" id="status"></div>
+    <div class="col-sm-3" id="status_icon"></div>
+    <div class="col-sm-4" id="options"></div>
+  </div>
+
+  <!--project_fullname-->
+  <div id="project_fullname"></div>
+</header>
+
+<!--main-->
+<main class="container-fluid main-content">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="fixed-content">
+            <div id="total_energy" class="total-energy">
+              <div class="data-energy">
+                <img
+                  class="icon-report"
+                  src="../../../../assets/images/icon-total-energy.png"
+                  alt=""
+                />
+                <div class="capacity">
+                  <p>công suất tức thời hệ pv</p>
+                  <h5>5,58 kW</h5>
+                </div>
+              </div>
+              <div class="sum-data col-sm-6">
+                <p class="data-content">
+                  <svg
+                    data-v-85ad2a4c=""
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    height="1em"
+                    focusable="false"
+                    role="img"
+                    alt="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    class="bi-house-door-fill b-icon bi"
+                  >
+                    <g data-v-85ad2a4c="">
+                      <path
+                        d="M6.5 10.995V14.5a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-7a.5.5 0 01.146-.354l6-6a.5.5 0 01.708 0l6 6a.5.5 0 01.146.354v7a.5.5 0 01-.5.5h-4a.5.5 0 01-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        d="M13 2.5V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </g>
+                  </svg>
+                  <strong> Hệ 1: 5,58 kW </strong>
+                </p>
+                <div class="data-inverter">
+                  <ul class="data-list">
+                    <li class="data-item">
+                      <strong>Inverter-1: 5,58 kW </strong>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="fixed-content">
+            <div id="total_energy" class="total-energy">
+              <div class="data-energy">
+                <img
+                  class="icon-report"
+                  src="../../../../assets/images/icon-cool-water.png"
+                  alt=""
+                />
+                <div class="capacity">
+                  <p>năng lượng sản xuất trong ngày</p>
+                  <h5>13,00 kWh</h5>
+                </div>
+              </div>
+              <div class="data-energy">
+                <img
+                  class="icon-report"
+                  src="../../../../assets/images/icon-hot-water.png"
+                  alt=""
+                />
+                <div class="capacity">
+                  <p>Tổng năng lượng pv sản xuất</p>
+                  <h5>44.360 kWh</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="fixed-content">
+            <div id="total_energy" class="save-money total-energy">
+              <div class="data-energy">
+                <img
+                  class="icon-report"
+                  src="../../../../assets/images/icon-save-money.png"
+                  alt=""
+                />
+                <div class="capacity">
+                  <p>tổng tiền tiết kiệm</p>
+                  <br />
+                  <h5>79.493.120 VNĐ</h5>
+                </div>
+              </div>
+              <div class="reference-price">
+                <p>
+                  <i>(*) Giá điện tham khảo: </i>
+                  <strong>1792 VNĐ</strong>
+                </p>
+              </div>
+              <div class="data-energy">
+                <img
+                  class="icon-report"
+                  src="../../../../assets/images/icon-air-co2.png"
+                  alt=""
+                />
+                <div class="capacity">
+                  <p>
+                    tổng lượng giảm phát thải co
+                    <sub>2</sub>
+                  </p>
+                  <br />
+                  <h5>38,37 Tấn</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="fixed-content">
+            <div id="save_energy" class="save-energy total-energy">
+              <p class="title-energy">điện áp dc hệ pv</p>
+              <table
+                data-v-85ad2a4c=""
+                id="table-dc"
+                role="table"
+                aria-busy="false"
+                aria-colcount="4"
+                class="table b-table table-striped table-hover table-bordered"
+              >
+                <thead role="rowgroup" class="thead-dark">
+                  <tr role="row">
+                    <th role="columnheader" scope="col" aria-colindex="1">
+                      Hệ
+                    </th>
+                    <th role="columnheader" scope="col" aria-colindex="2">
+                      Inverter
+                    </th>
+                    <th role="columnheader" scope="col" aria-colindex="3">
+                      PV1(V)
+                    </th>
+                    <th role="columnheader" scope="col" aria-colindex="4">
+                      PV2(V)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody role="rowgroup">
+                  <tr role="row">
+                    <td aria-colindex="1" role="cell">Hệ 1</td>
+                    <td aria-colindex="2" role="cell">
+                      <div data-v-85ad2a4c="">
+                        <b data-v-85ad2a4c="" style="color: green">1</b> -
+                        <svg
+                          data-v-85ad2a4c=""
+                          viewBox="0 0 16 16"
+                          width="1em"
+                          height="1em"
+                          focusable="false"
+                          role="img"
+                          alt="icon"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          class="bi-check-circle b-icon bi text-success b-icon-animation-fade"
+                        >
+                          <g data-v-85ad2a4c="">
+                            <path
+                              fill-rule="evenodd"
+                              d="M15.354 2.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3-3a.5.5 0 11.708-.708L8 9.293l6.646-6.647a.5.5 0 01.708 0z"
+                              clip-rule="evenodd"
+                            ></path>
+                            <path
+                              fill-rule="evenodd"
+                              d="M8 2.5A5.5 5.5 0 1013.5 8a.5.5 0 011 0 6.5 6.5 0 11-3.25-5.63.5.5 0 11-.5.865A5.472 5.472 0 008 2.5z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </g>
+                        </svg>
+                      </div>
+                    </td>
+                    <td aria-colindex="3" role="cell">525.92</td>
+                    <td aria-colindex="4" role="cell">527.56</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4" id="overview_chart">
+      <div class="num-plate" id="num_plate">
+        <h6 class="num-plate-title">BIỂN SỐ</h6>
+        <table
+          data-v-85ad2a4c=""
+          id="table-baocao"
+          role="table"
+          aria-busy="false"
+          aria-colcount="2"
+          class="table b-table table-striped table-hover table-bordered"
+        >
+          <thead role="rowgroup" class="thead-dark">
+            <tr role="row">
+              <th role="columnheader" scope="col" aria-colindex="1">
+                Công suất tức thời (kW)
+              </th>
+              <th role="columnheader" scope="col" aria-colindex="2">
+                Công suất ngõ ra AC (kW)
+              </th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <td aria-colindex="1" role="cell">5,58</td>
+              <td aria-colindex="2" role="cell">5,46</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="project-info" id="project_info">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="../../../../assets/images/project-info.png" alt="" />
+            </div>
+            <div id="text_project_info" class="col-sm-9">
+              <h6>
+                <strong>THÔNG TIN DỰ ÁN</strong>
+              </h6>
+              <p>
+                Hệ thống Điện mặt trời hòa lưới<br />Tổng Công Suất: 10.4
+                <span style="text-transform: lowercase">k</span>W<span
+                  style="text-transform: lowercase"
+                  >p</span
+                ><br />Ngày lắp đặt: 19/12/2016
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="weather-info" id="weather">
+        <h6>
+          <strong>THÔNG TIN THỜI TIẾT</strong>
+        </h6>
+        <div class="row">
+          <div class="col-sm-6">
+            <h5><strong> 30 &deg;C </strong></h5>
+            <p>mây thưa</p>
+          </div>
+          <div class="col-sm-6">
+            <h5><strong> 4 m/s </strong></h5>
+          </div>
+        </div>
+      </div>
+      <div class="device-status" id="device_status">
+        <h6>
+          <strong> TRẠNG THÁI THIẾT BỊ</strong>
+          <div class="row">
+            <div class="col-sm-6 time-update">
+              <h6>Hệ 1</h6>
+              <img
+                src="../../../../assets/images/icon-time-update.png"
+                alt=""
+              />
+              <p>
+                Thời gian cập nhật: <br />
+                23/10/2020 10:22:18
+              </p>
+            </div>
+          </div>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <!--select production-->
+  <div class="product-options">
+    <h6><strong> NĂNG LƯỢNG SẢN XUẤT THEO NGÀY </strong></h6>
+    <select
+      id="__BVID__25"
+      class="select-product custom-select custom-select-sm"
+    >
+      <option value="byDay">Xem theo ngày</option>
+      <option value="byMonth">Xem theo tháng</option>
+    </select>
+
+    <!--chartbar-->
+    <div class="product-chartbar">
+      <canvas id="chart-bar" height="400px"></canvas>
+    </div>
+    <p class="note-chartbar">Con lăn: Phóng to/Thu nhỏ, Chuột trái: Kéo</p>
+
+    <!--capacity-->
+    <h6><strong> CÔNG SUẤT TRONG NGÀY </strong></h6>
+    <div class="form-control form-control-sm day-select">
+      <button class="btn btn-sm btn-select" type="button">
+        <svg
+          viewBox="0 0 16 16"
+          width="1em"
+          height="1em"
+          focusable="false"
+          role="img"
+          alt="icon"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="bi-calendar b-icon bi"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+              d="M14 0H2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
+              clip-rule="evenodd"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              d="M6.5 7a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2z"
+              clip-rule="evenodd"
+            ></path>
+          </g>
+        </svg>
+      </button>
+      <input
+        readonly
+        type="text"
+        id="datepicker"
+        class="form-control form-control-sm datepicker"
+      />
+    </div>
+
+    <!--chart line-->
+    <div class="product-chartbar">
+      <canvas id="chart-line" height="400px"></canvas>
+    </div>
+    <p class="note-chartbar">Con lăn: Phóng to/Thu nhỏ, Chuột trái: Kéo</p>
+  </div>
+</main>
+
+<footer class="row footer">
+  <div class="col-sm-10">
+    <div class="footer-info">
+      <p>Bản quyền © 2019 SolarBK, Bao gồm tất cả các quyền</p>
+      <p>
+        Mọi thông tin, bài viết, hình ảnh trên website này thuộc bản quyền của
+        SolarBK.
+      </p>
+      <p>
+        Thông tin liên hệ: 47 Lê Văn Thịnh, khu phố 5, P. Bình Trưng Đông, Q. 2,
+        TP. HCM, Việt Nam. Hotline: (+84.‎28) 7300 6759 - 1900 636 759
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <div class="mobile-app-scan">
+      <img src="../../../../assets/images/scan-app.png" alt="" />
+    </div>
+  </div>
+</footer>

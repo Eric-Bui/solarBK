@@ -1,0 +1,136 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-sidebar {
+  height: 100%;
+  text-align: center;
+  border-right: 1px solid #b3b3b3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .user-info {
+    height: 124px;
+    @extend .flex-center;
+    align-items: flex-end;
+    margin-top: 15px;
+
+    .user-content {
+      @extend .flex-center;
+      height: auto;
+      width: 100%;
+      background: #8b0000;
+
+      .user-icon {
+        height: 52px;
+        width: 52px;
+        border-radius: 50%;
+        background: #343a40;
+        @extend .flex-center;
+        cursor: pointer;
+        margin-right: 1rem;
+
+        &:hover {
+          background: #000;
+        }
+
+        svg {
+          width: 60%;
+          height: auto;
+          fill: #fff;
+        }
+      }
+
+      .user-name {
+        font-size: 12px;
+        color: #fff;
+      }
+    }
+  }
+
+  .sidebar-menu {
+    .sidebar-list {
+      list-style: none;
+
+      .sidebar-item {
+        text-align: left;
+        width: 100%;
+        padding: 5px 0;
+        padding-left: 5%;
+        font-weight: 600;
+
+        .sidebar-link {
+          color: #000;
+
+          img {
+            height: 50px;
+            width: 50px;
+          }
+
+          span {
+            padding-left: 3%;
+          }
+        }
+        .active {
+          display: inline-block;
+          background: #c92222;
+          width: 100%;
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+
+          img {
+            padding: 10px 5px;
+            box-sizing: content-box;
+          }
+        }
+
+        &:hover {
+          background: #ff5252;
+        }
+      }
+    }
+  }
+
+  .sidebar-options {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #b3b3b3;
+    @extend .flex-center;
+
+    .btn {
+      font-size: 13px;
+      padding: 6px 12px;
+    }
+
+    .btn-logout {
+      margin-right: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 1169px) {
+  .left-sidebar {
+    .sidebar-menu {
+      .sidebar-list {
+        .sidebar-item {
+          .sidebar-link {
+            img {
+              height: 35px;
+              width: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .left-sidebar {
+    .user-info {
+      height: 80px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+}

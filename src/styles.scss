@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: Avenir;
+  src: url("./assets/font/Avenir-Book.otf");
+}
+
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a,
+h6,
+label,
+span,
+p {
+  font-size: 12px;
+}
+
+strong {
+  font-weight: 600;
+}
