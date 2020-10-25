@@ -1,9 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { SubjectService } from "../../../services/subject.service";
+
 import { Chart } from "chart.js";
 import * as moment from "moment";
 declare var $: any;
-//import "chartjs-plugin-datalabels";
+import "chartjs-plugin-datalabels";
+
+import { GenerateDay, DataChartBar } from "../../../modules/chartbar";
+import { GenerateTime, DataChartLine } from "../../../modules/chartline";
 
 @Component({
   selector: "app-homepage",
@@ -23,48 +27,14 @@ export class HomepageComponent implements OnInit {
     this.handleChartLine();
   }
 
-  // data demo
-  dataChartBar = [
-    48,
-    38,
-    46,
-    17,
-    17,
-    48,
-    26,
-    45,
-    29,
-    49,
-    45,
-    31,
-    20,
-    14,
-    33,
-    30,
-    30,
-    32,
-    37,
-    40,
-    33,
-    21,
-    37,
-    15,
-    19,
-    30,
-    38,
-    42,
-    8,
-    46,
-  ];
-
   //method create chartbar
   chartBar = {
     data: {
-      labels: this.generateDay(),
+      labels: GenerateDay(),
       datasets: [
         {
           label: "Hệ 1",
-          data: this.dataChartBar,
+          data: DataChartBar(),
           backgroundColor: "#28d9ee",
         },
       ],
@@ -83,6 +53,7 @@ export class HomepageComponent implements OnInit {
           },
         ],
       },
+
       plugins: {
         datalabels: {
           color: "#000",
@@ -108,11 +79,11 @@ export class HomepageComponent implements OnInit {
   //method create chart line
   chartLine = {
     data: {
-      labels: this.generateTime(this.now),
+      labels: GenerateTime(this.now),
       datasets: [
         {
           label: "Hệ 1-Inverter",
-          data: this.dataChartBar,
+          data: DataChartLine(),
           backgroundColor: "#c6f02d",
           borderColor: "#c6f02d",
           fill: false,
@@ -127,9 +98,6 @@ export class HomepageComponent implements OnInit {
               fontColor: "rgba(0,0,0,.6)",
               fontStyle: "bold",
               beginAtZero: true,
-              min: 0,
-              max: 50,
-              step: 1,
             },
           },
         ],
@@ -147,6 +115,13 @@ export class HomepageComponent implements OnInit {
         fontStyle: "light",
       },
       maintainAspectRatio: false,
+
+      //hide points in chartline
+      elements: {
+        point: {
+          radius: 0,
+        },
+      },
     },
   };
 
@@ -154,31 +129,7 @@ export class HomepageComponent implements OnInit {
   handleChartLine() {
     this.subjectService.getChangeTime().subscribe((timer) => {
       this.createChartLine();
-      this.generateTime(timer);
     });
-  }
-
-  //function generate list the days
-  generateDay() {
-    const date = new Date();
-    const dayArr = [];
-
-    for (let i = 0; i < 30; i++) {
-      if (i > 0) {
-        date.setDate(date.getDate() - 1);
-      }
-
-      const day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-      const month =
-        date.getMonth() + 1 < 10
-          ? "0" + (date.getMonth() + 1)
-          : date.getMonth() + 1;
-
-      const daysAgo = `${date.getFullYear()}-${month}-${day}`;
-      dayArr.push(daysAgo);
-    }
-
-    return dayArr.reverse();
   }
 
   //handle datepicker when change
@@ -196,41 +147,8 @@ export class HomepageComponent implements OnInit {
       .datepicker("setDate", "0")
       .on("change", function (e) {
         this.changeDay = e.target.value;
-
-        // component.generateTime(this.changeDay);
         component.subjectService.sendChangeTime(this.changeDay);
       });
-  }
-
-  //function generate list the timer
-
-  generateTime(timer) {
-    let hourse = 0;
-    let minutes = 0;
-    let currentHourse = parseInt(moment().format("HH"));
-    let currentMinutes = parseInt(moment().format("mm"));
-    const timeArr = ["00:00:00"];
-
-    if (timer !== this.now) {
-      currentHourse = 24;
-    }
-    for (let i = 1; hourse <= currentHourse; i++) {
-      if (minutes === 50 && hourse < currentHourse) {
-        minutes = 0;
-        hourse++;
-      } else {
-        if (currentMinutes > minutes) {
-          minutes += 10;
-        }
-        return minutes;
-      }
-      let item = `${hourse < 10 ? "0" + hourse : hourse}:${
-        minutes < 10 ? "0" + minutes : minutes
-      }:00`;
-      timeArr.push(item);
-    }
-    console.log(timeArr);
-    return timeArr;
   }
 
   createChartBar() {

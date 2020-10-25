@@ -1,4 +1,114 @@
-<div class="left-sidebar">
+<button
+  data-toggle="modal"
+  data-target="#modal_aside_right"
+  class="btn-hamburger"
+  type="button"
+>
+  <div></div>
+  <div></div>
+  <div></div>
+</button>
+<div
+  id="modal_aside_right"
+  class="modal fixed-right"
+  tabindex="-1"
+  role="dialog"
+>
+  <div class="modal-dialog modal-dialog-aside" role="document">
+    <div class="modal-content">
+      <div class="left-sidebar left-sidebar-moblie">
+        <div class="logo">
+          <img src="../../../../assets/images/logo.png" alt="" />
+        </div>
+        <div class="user-info">
+          <div class="user-content">
+            <div class="user-icon">
+              <svg
+                viewBox="0 0 16 16"
+                width="1em"
+                height="1em"
+                focusable="false"
+                role="img"
+                alt="avatar"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi-person-fill b-icon bi"
+              >
+                <g>
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
+                    clip-rule="evenodd"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <b class="user-name">EVN Khánh Hòa</b>
+          </div>
+        </div>
+        <nav class="sidebar-menu">
+          <ul class="sidebar-list">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link active">
+                <img
+                  src="../../../../assets/images/icon-system-total.png"
+                  alt=""
+                />
+                <span>Tổng quan hệ thống</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <img src="../../../../assets/images/icon-report.png" alt="" />
+                <span>Thống kê & báo cáo</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <img src="../../../../assets/images/icon-service.png" alt="" />
+                <span>Bảo hành</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <img src="../../../../assets/images/icon-maintan.png" alt="" />
+                <span>Bảo trì</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-options">
+          <button type="button" class="btn btn-logout btn-primary">
+            Đăng xuất
+          </button>
+          <div class="dropdown">
+            <button
+              type="button"
+              class="btn btn-secondary dropdown-toggle"
+              id="dropdownMenuOffset"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              data-offset="10,20"
+            >
+              Tùy chọn
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal-bialog .// -->
+</div>
+<!-- modal.// -->
+
+<div class="left-sidebar left-sidebar-desktop">
   <div class="logo">
     <img src="../../../../assets/images/logo.png" alt="" />
   </div>

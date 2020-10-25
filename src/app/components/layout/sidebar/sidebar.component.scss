@@ -3,6 +3,26 @@
   justify-content: center;
   align-items: center;
 }
+//modal fix mobile
+.btn-hamburger {
+  border-radius: 5px;
+  border: 1px solid #fff;
+  background: transparent;
+  position: absolute;
+  top: 15px;
+  left: 20%;
+  z-index: 2;
+  display: none;
+  color: #fff;
+
+  div {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    border-radius: 3px;
+  }
+}
 
 .left-sidebar {
   height: 100%;
@@ -106,6 +126,14 @@
     .btn-logout {
       margin-right: 5px;
     }
+
+    .dropdown {
+      .dropdown-toggle {
+        &::after {
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
 
@@ -133,4 +161,17 @@
   }
 }
 @media screen and (max-width: 767px) {
+  .btn-hamburger {
+    display: block;
+  }
+  .left-sidebar-desktop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .btn-hamburger {
+    left: 30px;
+    top: 10px;
+  }
 }

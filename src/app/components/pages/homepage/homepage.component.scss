@@ -318,4 +318,44 @@ h5 {
   }
 }
 @media screen and (max-width: 767px) {
+  .footer {
+    .mobile-app-scan {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .project-info {
+    .container-fluid {
+      .row {
+        flex-wrap: nowrap;
+        .col-sm-3 {
+          width: 50%;
+          text-align: center;
+          img {
+            width: 70%;
+          }
+        }
+        .col-sm-9 {
+          h6 {
+            font-size: 14px;
+          }
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    .mobile-app-scan {
+      text-align: right;
+      img {
+        width: 40%;
+      }
+    }
+  }
 }
