@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
 import { SubjectService } from "../../../services/subject.service";
 
 import { Chart } from "chart.js";
@@ -8,6 +8,7 @@ import "chartjs-plugin-datalabels";
 
 import { GenerateDay, DataChartBar } from "../../../modules/chartbar";
 import { GenerateTime, DataChartLine } from "../../../modules/chartline";
+import { ClassField } from "@angular/compiler";
 
 @Component({
   selector: "app-homepage",
@@ -17,12 +18,13 @@ import { GenerateTime, DataChartLine } from "../../../modules/chartline";
 export class HomepageComponent implements OnInit {
   changeDay: string;
   now = moment().format("dddd, MMMM DD, YYYY");
+  chartLine: any;
 
   constructor(private subjectService: SubjectService) {}
 
   ngOnInit() {
     this.createChartBar();
-    this.createChartLine();
+    this.createChartLine(this.changeDay || this.now);
     this.handleDatePicker();
     this.handleChartLine();
   }
@@ -77,58 +79,60 @@ export class HomepageComponent implements OnInit {
   };
 
   //method create chart line
-  chartLine = {
-    data: {
-      labels: GenerateTime(this.now),
-      datasets: [
-        {
-          label: "Hệ 1-Inverter",
-          data: DataChartLine(),
-          backgroundColor: "#c6f02d",
-          borderColor: "#c6f02d",
-          fill: false,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        yAxes: [
+  optionChartLine(timer) {
+    return (this.chartLine = {
+      data: {
+        labels: GenerateTime(timer || this.now),
+        datasets: [
           {
-            ticks: {
-              fontColor: "rgba(0,0,0,.6)",
-              fontStyle: "bold",
-              beginAtZero: true,
-            },
+            label: "Hệ 1-Inverter",
+            data: DataChartLine(),
+            backgroundColor: "#c6f02d",
+            borderColor: "#c6f02d",
+            fill: false,
           },
         ],
-      }, // scale
-      plugins: {
-        datalabels: {
-          display: false,
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                fontColor: "rgba(0,0,0,.6)",
+                fontStyle: "bold",
+                beginAtZero: true,
+              },
+            },
+          ],
+        }, // scale
+        plugins: {
+          datalabels: {
+            display: false,
+          },
         },
-      },
-      title: {
-        display: true,
-        text: "Công suất PV trong ngày (kW)",
-        position: "left",
-        fontFamily: "Avenir",
-        fontStyle: "light",
-      },
-      maintainAspectRatio: false,
+        title: {
+          display: true,
+          text: "Công suất PV trong ngày (kW)",
+          position: "left",
+          fontFamily: "Avenir",
+          fontStyle: "light",
+        },
+        maintainAspectRatio: false,
 
-      //hide points in chartline
-      elements: {
-        point: {
-          radius: 0,
+        //hide points in chartline
+        elements: {
+          point: {
+            radius: 0,
+          },
         },
       },
-    },
-  };
+    });
+  }
 
   //reload chartline when user change data
   handleChartLine() {
     this.subjectService.getChangeTime().subscribe((timer) => {
-      this.createChartLine();
+      this.createChartLine(timer);
     });
   }
 
@@ -161,7 +165,8 @@ export class HomepageComponent implements OnInit {
     });
   }
 
-  createChartLine() {
+  createChartLine(timer) {
+    this.chartLine = this.optionChartLine(timer);
     //new chartline
     new Chart("chart-line", {
       type: "line",
